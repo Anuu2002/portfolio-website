@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Portfolio</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1E293B', // Dark Blue
+            secondary: '#3B82F6', // Light Blue
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    /* 3D Background Effect */
+    .bg-3d {
+      perspective: 1000px;
+      background: linear-gradient(135deg, #1e293b, #3b82f6);
+    }
+
+    /* 3D Content Container */
+    .card {
+      transform-style: preserve-3d;
+      transition: transform 0.6s;
+    }
+
+    .card:hover {
+      transform: rotateY(10deg) rotateX(10deg);
+    }
+
+    .card-content {
+      backface-visibility: hidden;
+    }
+  </style>
+</head>
+<body class="bg-3d text-white min-h-screen flex flex-col justify-center items-center">
+
+  <!-- Main Card Section -->
+  <div class="card w-96 h-auto bg-gray-900 rounded-xl shadow-lg relative">
+    <!-- Profile Side -->
+    <div class="card-content p-6 text-center">
+      <img src="image.png" alt="Profile Photo" class="w-40 h-40 mx-auto rounded-full border-4 border-secondary shadow-lg mb-4">
+      <h1 class="text-2xl font-bold">Sudhansu Kumar</h1>
+      <p class="text-sm text-gray-400 mt-2">Aspiring Data Engineer</p>
+      <div class="mt-6 space-x-4">
+        <a href="https://www.linkedin.com/in/sudhansu-kumar-734285261/" target="_blank" class="bg-secondary px-4 py-2 rounded hover:bg-blue-600">LinkedIn</a>
+        <a href="https://github.com/settings/profile" target="_blank" class="bg-secondary px-4 py-2 rounded hover:bg-blue-600">GitHub</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- About Section -->
+  <section id="about" class="w-full py-16">
+    <div class="container mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold text-secondary mb-6">About Me</h2>
+      <p class="text-gray-300 text-lg max-w-3xl mx-auto">
+        I specialize in data engineering, ETL pipelines, and cloud technologies. Passionate about optimizing data solutions to solve real-world problems efficiently.
+      </p>
+    </div>
+  </section>
+
+  <!-- Skills Section -->
+  <section id="skills" class="py-16 bg-gray-800">
+    <div class="container mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold text-secondary mb-6">My Skills</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-900 p-6 rounded shadow-lg">
+          <h3 class="text-xl font-bold">Azure Databricks</h3>
+          <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+            <div class="bg-secondary h-2 rounded-full" style="width: 90%;"></div>
+          </div>
+        </div>
+        <div class="bg-gray-900 p-6 rounded shadow-lg">
+          <h3 class="text-xl font-bold">Snowflake</h3>
+          <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+            <div class="bg-secondary h-2 rounded-full" style="width: 85%;"></div>
+          </div>
+        </div>
+        <div class="bg-gray-900 p-6 rounded shadow-lg">
+          <h3 class="text-xl font-bold">Python</h3>
+          <div class="w-full bg-gray-700 rounded-full h-2 mt-4">
+            <div class="bg-secondary h-2 rounded-full" style="width: 95%;"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="py-16">
+    <div class="container mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold text-secondary mb-6">Projects</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div class="bg-gray-900 p-6 rounded shadow-lg hover:shadow-2xl transition">
+          <h3 class="text-xl font-bold">Social Media Sentiment Analysis</h3>
+          <p class="text-gray-300 mt-2">Developed a pipeline to analyze Twitter data using Azure tools.</p>
+        </div>
+        <div class="bg-gray-900 p-6 rounded shadow-lg hover:shadow-2xl transition">
+          <h3 class="text-xl font-bold">Data Quality Monitoring</h3>
+          <p class="text-gray-300 mt-2">Built a monitoring system for data quality with Apache Airflow.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="bg-gray-900 py-16">
+    <div class="container mx-auto text-center px-6">
+      <h2 class="text-3xl font-bold text-secondary mb-6">Contact Me</h2>
+      <p class="text-gray-400">Email: sudhansukumar@example.com</p>
+      <p class="text-gray-400">Phone: +91 9021666249</p>
+    </div>
+  </section>
+
+  <script src="script.js"></script>
+</body>
+</html>
